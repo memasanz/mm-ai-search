@@ -4,13 +4,35 @@ This repository contains a comprehensive demonstration of Azure AI Search capabi
 
 ## 📋 Prerequisites
 
-- Azure subscription with the following services:
+- Azure subscription with the following services (place in same region):
   - Azure AI Search
   - Azure Blob Storage
   - Azure OpenAI Service
   - Azure AI Services (for OCR and layout analysis)
 - Python 3.8+
 - Jupyter environment or VS Code with Python extension
+
+- For custom embedding model: https://github.com/Azure/azure-search-vector-samples/blob/main/demo-python/code/custom-vectorizer/readme.md
+
+## AI Search Pre-req:
+-Set Semantic Ranker Enablement
+
+## Pre-req permissions
+- Set to use Manged Indentities:
+  - Use Managed Identiy on Azure OpenAI
+    - Identity -> System Assigned Set to "On"
+
+  - Use Managed Identity on AI Search
+    - Identity -> System Assigned Set to "On"
+    - Settings > Keys > Select Role-based access control or Both
+
+- Set Permisions:
+
+On AI Search Assign Search Service Contributor to yourself & managed id connecting
+On AI Search Assign Search Index Data Contributor to yourself & maanged id connecting
+On Blob Storage Assign Blob Data Contirbutor 
+
+
 
 ## 🚀 Getting Started
 
