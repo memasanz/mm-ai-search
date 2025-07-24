@@ -30,7 +30,14 @@ This repository contains a comprehensive demonstration of Azure AI Search capabi
 
 On AI Search Assign Search Service Contributor to yourself & managed id connecting
 On AI Search Assign Search Index Data Contributor to yourself & maanged id connecting
+On OpenAI Resource Assign Assign Cognitive Services OpenAI User to AI Search
 On Blob Storage Assign Blob Data Contirbutor 
+
+
+*For 001 & 002 Notebooks - ensure
+- AI Services using managed identity. 
+ - Identity -> System Assigned Set to "On"
+- Ensure the identity has been granted permission Cognitive Services User on the AI Service
 
 
 
