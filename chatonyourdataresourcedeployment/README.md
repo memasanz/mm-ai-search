@@ -17,12 +17,13 @@ These will work with managed identity & key connections to resources.
 az deployment group create --resource-group <put-your-resource-group-here>  --template-file main.bicep  --parameters openAiServiceName=<openaiservicename> storageAccountName=<storageaccountname> searchServiceName=<searchservicename>
 ```
 
+- For the userPrincipalName - use your object id from entra (provided you have authorization to provide permissions)
+
 ```
 az deployment group create --resource-group <put-your-resource-group-here> --template-file permissions.bicep --parameters userPrincipalName=XXXX-XXXX-XXX-XXXX-XXXX openAiServiceName=<openaiservicename> storageAccountName=<storageaccountname> searchServiceName=<searchservicename>
 ```
 
-After Deploying resources, then can attach AI Search & Azure OpenAI to AI Studio Hub creation at ai.azure.com
-You will also be able to connect in Azure OpenAI Studio using keys or managed identity
+
 
 For Users to leverage resources the permissions.bicep script provides the following permssions:
 + blob data reader (on storage)
@@ -36,3 +37,4 @@ For Users to leverage resources the permissions.bicep script provides the follow
 
 Some Notes:
 + Enabled soft deletes for blobs and containers. (Not required, but the oai.azure.com/portal requires it.)
++ Cognitive Services User Permissions provide on teh AI Services Account resource and give to AI Search for notebooks 02/03
